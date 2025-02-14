@@ -1,28 +1,34 @@
 {
-    "manifest_version": 3,
-    "name": "页面内容爬取插件",
-    "version": "1.0",
-    "description": "用来爬取页面内容的 Chrome 插件。",
-    "permissions": [
-      "activeTab",
-      "storage"
-    ],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"]
-      }
-    ],
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "icons/icon16.png",
-        "48": "icons/icon48.png",
-        "128": "icons/icon128.png"
-      }
-    }
-  }
-  
+  "manifest_version": 3,
+  "name": "CNKI Data Collector",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting",
+    "webRequest",
+    "webNavigation",
+    "notifications",
+    "sidePanel",
+    "background"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "点击打开侧边栏"
+  },
+  "icons": {
+        "16": "icons/buoumao.png",
+        "48": "icons/jumao.png",
+        "128": "icons/lanmao.png"
+  },
+  "side_panel": {
+    "default_path": "/popup/index.html",
+    "openPanelOnActionClick": true
+  },
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}

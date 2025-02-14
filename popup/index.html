@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CNKI Collector</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>CNKI数据采集</h1>
+
+        <!-- 数据上传区域 -->
+        <div class="upload-section">
+            <input type="file" id="jsonUpload" accept=".json" hidden>
+            <label for="jsonUpload" class="upload-btn">📁 选择期刊JSON文件</label>
+            <div id="selectedFile"></div>
+        </div>
+
+        <!-- 进度显示 -->
+        <div class="progress-section">
+            <div class="progress">
+                <div class="progress-bar"></div>
+                <div class="progress-text">0%</div>
+            </div>
+            <div class="stats">
+                <div>已处理: <span id="processed">0</span></div>
+                <div>剩余: <span id="remaining">0</span></div>
+            </div>
+        </div>
+
+        <!-- 控制按钮 -->
+        <div class="controls">
+            <button id="start">▶ 开始采集</button>
+            <button id="export">💾 导出结果</button>
+            <button id="stop">⏹ 停止</button>
+        </div>
+
+        <!-- 实时日志 -->
+        <div class="log-container">
+            <h3>运行日志</h3>
+            <div id="logOutput" class="log-output"></div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
